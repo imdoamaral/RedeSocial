@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1612836286 source:c:\users\pichau\documents\codeblocks\redesocial\main.c
+1612838062 source:c:\users\pichau\documents\codeblocks\redesocial\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -10,7 +10,7 @@
 	<stdlib.h>
 	<string.h>
 
-1612836310 source:c:\users\pichau\documents\codeblocks\redesocial\redesocial.c
+1612838084 source:c:\users\pichau\documents\codeblocks\redesocial\redesocial.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

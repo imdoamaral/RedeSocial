@@ -110,15 +110,18 @@ int pesquisar(TRedeSocial rede, TUsuarios user)
     // Se NAO encontrar = retorna -1
 
     char nome[100];
+    int i;
 
     printf("\nInforme o nome de usuario que deseja buscar: ");
     fflush(stdin);
     fgets(nome, 100, stdin);
 
-    if (strcmp(nome, user.nome) == 0)
-        return rede.indice;
-    else
-        return -1;
+    for (i=0; i < rede.indice; i++)
+    {
+        if (strcmp(nome, user.nome) == 0)
+            return i;
+    }
+    return -1;
 }
 
 void alterar(TRedeSocial *rede, TUsuarios user, int index)

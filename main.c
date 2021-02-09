@@ -28,14 +28,15 @@ int main()
     ler(&user);
     iniciar(&rede);
     cadastrar(&rede, user);
-    imprimir(user);
-    imprimir2(rede);
+    //imprimir(user);
+    //imprimir2(rede);
     // Passagem por referencia: tudo aquilo que se vai modificar
     // Passagem por valor: todo o resto
 
     int index = pesquisar(rede, user);
-    ler(&user);
-    alterar(&rede, user, index);
+    printf("\Numero retornado: %d", index);
+    //ler(&user);
+    //alterar(&rede, user, index);
 
     return 0;
 }

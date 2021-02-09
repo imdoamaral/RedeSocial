@@ -2,6 +2,8 @@
 #define REDESOCIAL_H_INCLUDED
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef struct data
 {
@@ -36,6 +38,9 @@ void ler(TUsuarios *user);
 void imprimir(TUsuarios user);
 void iniciar(TRedeSocial *rede);
 void cadastrar(TRedeSocial *rede, TUsuarios user);
-void imprimir2(TRedeSocial rede);
+void imprimir2(TRedeSocial rede); // add condicional para ID diferente de -1
+int pesquisar(TRedeSocial rede, TUsuarios user);
+void alterar(TRedeSocial *rede, TUsuarios user, int index);
+excluir (TRedeSocial *rede, TUsuarios user, int index);
 
 #endif // REDESOCIAL_H_INCLUDED

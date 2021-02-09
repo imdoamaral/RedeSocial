@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "redesocial.h"
 
@@ -95,9 +96,32 @@ void imprimir2(TRedeSocial rede)
 {
     int i;
 
+    printf("\n##### CHAMADA DA FUNCAO IMPRIMIR 2 #####\n");
+
     for (i=0; i < rede.indice; i++)
     {
-        printf("\n##### CHAMADA DA FUNCAO IMPRIMIR 2 #####\n");
         imprimir(rede.vetor[i]);
     }
+}
+
+int pesquisar(TRedeSocial rede, TUsuarios user)
+{
+    // Se encontrar o usuario = retorna o INDICE
+    // Se NAO encontrar = retorna -1
+
+    char nome[100];
+
+    printf("\nInforme o nome de usuario que deseja buscar: ");
+    fflush(stdin);
+    fgets(nome, 100, stdin);
+
+    if (strcmp(nome, user.nome) == 0)
+        return rede.indice;
+    else
+        return -1;
+}
+
+void alterar(TRedeSocial *rede, TUsuarios user, int index)
+{
+
 }

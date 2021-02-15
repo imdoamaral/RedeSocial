@@ -35,11 +35,13 @@ void ler(TUsuarios *user)
     printf("\nDigite o ano: ");
     fflush(stdin);
     scanf("%d", &user->data_de_nascimento.ano);
+
+    printf("\n");
 }
 
 void imprimir(TUsuarios user)
 {
-    printf("\n##### CHAMADA DA FUNCAO IMPRIMIR #####\n");
+    printf("\n\n##### CHAMADA DA FUNCAO IMPRIMIR #####\n");
 
     printf("\nNome do usuario: ");
     printf("\n%s", user.nome);
@@ -69,7 +71,7 @@ void imprimir(TUsuarios user)
     printf("\n");
 }
 
-void iniciar(TRedeSocial *rede)
+void inicializar(TRedeSocial *rede)
 {
     rede->indice = 0;
 
@@ -96,8 +98,6 @@ void imprimir2(TRedeSocial rede)
 {
     int i;
 
-    printf("\n##### CHAMADA DA FUNCAO IMPRIMIR 2 #####\n");
-
     for (i=0; i < rede.indice; i++)
     {
         imprimir(rede.vetor[i]);
@@ -109,16 +109,11 @@ int pesquisar(TRedeSocial rede, TUsuarios user)
     // Se encontrar o usuario = retorna o INDICE
     // Se NAO encontrar = retorna -1
 
-    char nome[100];
     int i;
-
-    printf("\nInforme o nome de usuario que deseja buscar: ");
-    fflush(stdin);
-    fgets(nome, 100, stdin);
 
     for (i=0; i < rede.indice; i++)
     {
-        if (strcmp(nome, user.nome) == 0)
+        if (strcmp(rede.vetor[i].nome, user.nome) == 0)
             return i;
     }
     return -1;
@@ -126,23 +121,15 @@ int pesquisar(TRedeSocial rede, TUsuarios user)
 
 void alterar(TRedeSocial *rede, TUsuarios user, int index)
 {
-    if (index != -1)
-    {
-        rede->vetor[index]=user; // deixar somente essa linha
-        printf("\nUsuario alterado com sucesso!\n");
-    }
-    else
-        printf("\nNao foi possivel fazer a alteracao.\n");
+    rede->vetor[index]=user;
 }
 
 void excluir (TRedeSocial *rede, int index)
 {
-    if (index != -1)
-    {
         rede->vetor[index].ID = -1;
         int linha, coluna;
 
-        /* Zerando todas as amizades do ponto de vista do usuario 'i'
+        /* Zerando todas as amizades do ponto de vista do usuario 'index'
         for (coluna=0; coluna < rede->indice ; coluna++)
         {
             if(rede->matrix[index][coluna] == 1)
@@ -161,7 +148,4 @@ void excluir (TRedeSocial *rede, int index)
                 rede->matrix[index][coluna] = 0; // do ponto de vista: i
                 rede->matrix[coluna][index] = 0; // do ponto de vista: col
         }
-    }
-    else
-        printf("\nNao foi possivel fazer a exclusao.\n");
 }

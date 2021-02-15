@@ -19,7 +19,7 @@ ANOTAÇOES - Aula 5
 #include <stdlib.h>
 #include <string.h>
 
-//#include "redesocial.h"
+#include "redesocial.h"
 #include "interface.h"
 
 int main()
@@ -27,12 +27,7 @@ int main()
     // Declaraçao de variaveis locais
     TUsuarios user;
     TRedeSocial rede;
-
-    /*
-    // Chamada da funcao
-    ler(&usuario);
-    imprimir(usuario);
-    */
+    inicializar(&rede);
 
     int opcao = 0;
 
@@ -60,14 +55,15 @@ int main()
         case 4:
             system("cls");
             printf("\n\n\n\t>>>>> MSG: Digite uma opcao valida! <<<<<");
-            //system("PAUSE");
             fflush(stdin);
             getchar();
+            //system("PAUSE");
         }
     }while(opcao != 3);
 
     fflush(stdin);
     getchar();
+    //system("PAUSE");
 
     return 0;
 }

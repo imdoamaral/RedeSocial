@@ -36,9 +36,9 @@ typedef struct redeSocial
 // Assinatura das funçoes
 void ler(TUsuarios *user);
 void imprimir(TUsuarios user);
-void iniciar(TRedeSocial *rede);
+void inicializar(TRedeSocial *rede);
 void cadastrar(TRedeSocial *rede, TUsuarios user);
-void imprimir2(TRedeSocial rede); // add condicional para ID diferente de -1
+void imprimir2(TRedeSocial rede);
 int pesquisar(TRedeSocial rede, TUsuarios user);
 void alterar(TRedeSocial *rede, TUsuarios user, int index);
 void excluir (TRedeSocial *rede, int index);

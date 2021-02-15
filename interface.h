@@ -8,6 +8,6 @@
 
 void MSG_MENU(); // MENU PRINCIPAL
 void MSG_SUBMENU(int numero_modulo); // SUBMENU MODULOS
-void subMenuModulo1(TRedeSocial *rede, TUsuarios user);
+void subMenuModulo1(TRedeSocial *rede, TUsuarios user); // GERENCIAR USUARIOS
 
 #endif // INTERFACE_H_INCLUDED

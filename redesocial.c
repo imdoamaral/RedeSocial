@@ -126,5 +126,42 @@ int pesquisar(TRedeSocial rede, TUsuarios user)
 
 void alterar(TRedeSocial *rede, TUsuarios user, int index)
 {
+    if (index != -1)
+    {
+        rede->vetor[index]=user; // deixar somente essa linha
+        printf("\nUsuario alterado com sucesso!\n");
+    }
+    else
+        printf("\nNao foi possivel fazer a alteracao.\n");
+}
 
+void excluir (TRedeSocial *rede, int index)
+{
+    if (index != -1)
+    {
+        rede->vetor[index].ID = -1;
+        int linha, coluna;
+
+        /* Zerando todas as amizades do ponto de vista do usuario 'i'
+        for (coluna=0; coluna < rede->indice ; coluna++)
+        {
+            if(rede->matrix[index][coluna] == 1)
+                rede->matrix[index][coluna] = 0;
+        }
+        // Zerando as amizades do ponto de vista dos OUTROS USUARIOS
+        // que possuem amizade com o usuario 'i'
+        for (linha=0; linha < rede->indice; linha ++)
+            if (rede->matrix[linha][index] == 1)
+                rede->matrix[linha][index] = 0;
+        */
+
+        for (coluna=0; coluna < rede->indice ; coluna++)
+        {
+            if(rede->matrix[index][coluna] == 1)
+                rede->matrix[index][coluna] = 0; // do ponto de vista: i
+                rede->matrix[coluna][index] = 0; // do ponto de vista: col
+        }
+    }
+    else
+        printf("\nNao foi possivel fazer a exclusao.\n");
 }

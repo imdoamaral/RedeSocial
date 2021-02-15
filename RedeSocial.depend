@@ -1,18 +1,28 @@
 # depslib dependency file v1.0
-1612838062 source:c:\users\pichau\documents\codeblocks\redesocial\main.c
+1613350869 source:c:\users\pichau\documents\codeblocks\redesocial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"interface.h"
+
+1613339979 c:\users\pichau\documents\codeblocks\redesocial\redesocial.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1613349704 source:c:\users\pichau\documents\codeblocks\redesocial\redesocial.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"redesocial.h"
 
-1612836698 c:\users\pichau\documents\codeblocks\redesocial\redesocial.h
+1613349919 c:\users\pichau\documents\codeblocks\redesocial\interface.h
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-
-1612838084 source:c:\users\pichau\documents\codeblocks\redesocial\redesocial.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
 	"redesocial.h"
+
+1613350633 source:c:\users\pichau\documents\codeblocks\redesocial\interface.c
+	<stdio.h>
+	<stdlib.h>
+	"interface.h"
 

@@ -41,6 +41,6 @@ void cadastrar(TRedeSocial *rede, TUsuarios user);
 void imprimir2(TRedeSocial rede); // add condicional para ID diferente de -1
 int pesquisar(TRedeSocial rede, TUsuarios user);
 void alterar(TRedeSocial *rede, TUsuarios user, int index);
-excluir (TRedeSocial *rede, TUsuarios user, int index);
+void excluir (TRedeSocial *rede, int index);
 
 #endif // REDESOCIAL_H_INCLUDED

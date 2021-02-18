@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="amizades.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="amizades.h" />
 		<Unit filename="interface.c">
 			<Option compilerVar="CC" />
 		</Unit>

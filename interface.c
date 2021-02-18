@@ -150,3 +150,132 @@ void subMenuModulo1(TRedeSocial *rede, TUsuarios user)
 
     }while(opcao != 6);
 }
+
+void subMenuModulo2(TRedeSocial *rede, TUsuarios user1, TUsuarios user2)
+{
+    int opcao = 0, index;
+
+    do
+    {
+        MSG_SUBMENU(2);
+        printf("\n\nDigite uma opcao: ");
+        fflush(stdin);
+        scanf("%d", &opcao);
+
+        switch(opcao)
+        {
+        case 1:
+            // codigo para opcao do menu Cadastrar Amizade
+            system("cls");
+
+            printf("\n\n >>>>> MSG: Cadastre uma amizade: <<<<< \n\n");
+
+            printf("\n MSG: Digite um nome de usuario para CADASTRAR a amizade: ");
+            fflush(stdin);
+            fgets(user1.nome, 100, stdin);
+            printf("\n MSG: Digite um nome de usuario para CADASTRAR a amizade: ");
+            fflush(stdin);
+            fgets(user2.nome, 100, stdin);
+
+            cadastrarAmizades(user1, user2, rede);
+            printf("\n\n >>>>> MSG: Amizade cadastrada com sucesso! <<<<< \n\n");
+
+            system("PAUSE");
+            break;
+
+        case 2:
+            // codigo para opcao do menu Pesquisar Amizade
+            system("cls");
+
+            printf("\n MSG: Digite um nome de usuario para PESQUISAR a amizade: ");
+            fflush(stdin);
+            fgets(user1.nome, 100, stdin);
+            printf("\n MSG: Digite um nome de usuario para PESQUISAR a amizade: ");
+            fflush(stdin);
+            fgets(user2.nome, 100, stdin);
+
+            index = pesquisarAmizades(user1, user2, *rede); // o * aqui significa = "conteudo de"
+
+            if  (index == 1)
+            {
+                printf("\n\n >>>>> MSG: Amizade encontrada! <<<<<\n\n");
+            }
+            else
+                printf("\n\n >>>>> MSG: Os usuarios pesquisados nao estao cadastrados! <<<<<\n\n");
+
+            system("PAUSE");
+            break;
+
+        case 3:
+            // codigo para opcao do menu Alterar (nao se aplica)
+            system("cls");
+
+            printf("\n\n >>>>> MSG: A funcao ALTERAR nao esta disponivel nesse modulo! <<<<<\n\n");
+
+            system("PAUSE");
+            break;
+
+        case 4:
+            // codigo para opcao do menu Excluir Amizades
+            system("cls");
+
+            printf("\n\n MSG: Digite o nome da amizade que deseja EXCLUIR: ");
+            fflush(stdin);
+            fgets(user1.nome, 100, stdin);
+            printf("\n\n MSG: Digite o nome da amizade que deseja EXCLUIR: ");
+            fflush(stdin);
+            fgets(user2.nome, 100, stdin);
+
+            index = excluirAmizades(user1, user2, rede);
+            if (index >= 0)
+            {
+                printf("\n\n >>>>> MSG: Amizade excluida com sucesso! <<<<<\n\n");
+            }
+            else
+                printf("\n\n >>>>> MSG: Amizade nao encontrada! <<<<<\n\n");
+
+            system("PAUSE");
+            break;
+
+        case 5:
+            // codigo para opcao do menu Imprimir a Lista de Amigos
+            system("cls");
+
+            if (rede->indice > 0)
+            {
+                printf("\n\n MSG: Digite o nome da usuario que deseja IMPRIMIR as amizades: ");
+                fflush(stdin);
+                fgets(user1.nome, 100, stdin);
+
+                index = pesquisar(*rede, user1);
+
+                if(index >= 0)
+                {
+                    printf("\n\n >>>>> MSG: Lista de amigos cadastrados: <<<<<\n\n");
+                    imprimirListaAmigos(user1, *rede);
+                }
+            }
+            else
+                printf("\n\n >>>>> MSG: Nao existem usuarios cadastrados! <<<<<\n\n");
+
+            system("PAUSE");
+            break;
+
+        case 6:
+            system("cls");
+            printf("\n\n\n\t>>>>> MSG: Saindo do MODULO... <<<<<");
+            fflush(stdin);
+            getchar();
+            //system("PAUSE");
+            break;
+
+        default:
+            system("cls");
+            printf("\n\n\n\t>>>>> MSG: Digite uma opcao valida! <<<<<");
+            fflush(stdin);
+            getchar();
+            //system("PAUSE");
+        }
+
+    }while(opcao != 6);
+}

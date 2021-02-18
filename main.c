@@ -25,7 +25,7 @@ ANOTAÇOES - Aula 5
 int main()
 {
     // Declaraçao de variaveis locais
-    TUsuarios user;
+    TUsuarios user1, user2;
     TRedeSocial rede;
     inicializar(&rede);
 
@@ -43,11 +43,11 @@ int main()
         {
         case 1:
             // Chamada de Funcao para o submenu do Modulo I
-            subMenuModulo1(&rede, user);
+            subMenuModulo1(&rede, user1);
             break;
         case 2:
             // Chamada de Funcao para o submenu do Modulo II
-            // subMenuModulo2(&rede, user);
+            subMenuModulo2(&rede, user1, user2);
         case 3:
             system("cls");
             printf("\n\n\n\t>>>>> MSG: Saindo do programa... <<<<<");

@@ -5,60 +5,78 @@
 
 void cadastrarAmizades(TUsuarios user1, TUsuarios user2, TRedeSocial *rede)
 {
-    int  linha, coluna, cont;
-    linha = pesquisar(*rede, user1);
-    coluna = pesquisar(*rede, user2);
+    int i, j, coluna;
 
-    for(cont=0; cont<rede->indice; cont++)
+    i = pesquisar(*rede, user1);
+    j = pesquisar(*rede, user2);
+
+    if(i>=0 && j>=0)
     {
-        rede->matrix[linha][cont] = 1;
-        rede->matrix[cont][coluna] = 1;
-    }
+        for(coluna=0; coluna<rede->indice; coluna++)
+        {
+            rede->matrix[i][coluna] = 1;
+            rede->matrix[coluna][j] = 1;
+        }
+        printf("\n\n >>>>> MSG: Amizade cadastrada! <<<<< \n\n");
+
+    }else
+        printf("\n\n >>>>> MSG: Os usuarios pesquisados nao estao cadastrados! <<<<<\n\n");
+
 }
 
 int pesquisarAmizades(TUsuarios user1, TUsuarios user2, TRedeSocial rede)
 {
-    int linha, coluna, cont;
+    int linha, i, j,  coluna;
 
-    linha = pesquisar(rede, user1);
-    coluna = pesquisar(rede, user2);
+    i = pesquisar(rede, user1);
+    j = pesquisar(rede, user2);
 
-    for (cont=0; cont<rede.indice; cont++)
+    if(i>=0 && j>=0)
     {
-        if ((rede.matrix[linha][cont] == 1) && (rede.matrix[cont][coluna] == 1))
+        for (coluna=0; coluna<rede.indice; coluna++)
         {
-            return 1;
+            if ((rede.matrix[coluna][i] == 1) || (rede.matrix[j][coluna] == 1))
+            {
+                return 1;
+            }
         }
     }
+
     return 0;
 }
 
 void excluirAmizades(TUsuarios user1, TUsuarios user2, TRedeSocial *rede)
 {
-    int linha, coluna, cont;
+    int i, j, coluna;
 
-    linha = pesquisar(*rede, user1);
-    coluna = pesquisar(*rede, user2);
+    i = pesquisar(*rede, user1);
+    j = pesquisar(*rede, user2);
 
-    for (cont=0; cont<rede->indice; cont++)
+    if (i >= 0 && j >=0)
     {
-        rede->matrix[linha][cont] = 0;
-        rede->matrix[cont][coluna] = 0;
+        for (coluna=0; coluna<rede->indice; coluna++)
+        {
+            rede->matrix[i][coluna] = 0;
+            rede->matrix[coluna][j] = 0;
+        }
+        printf("\n\n >>>>> MSG: Amizade excluida com sucesso! <<<<<\n\n");
     }
+    else
+        printf("\n\n >>>>> MSG: Amizade nao encontrada! <<<<<\n\n");
+
+
 }
 
 void imprimirListaAmigos(TUsuarios user, TRedeSocial rede)
 {
-    int index, linha;
+    int i, linha;
 
-    index = pesquisar(rede, user);
+    i = pesquisar(rede, user);
 
-    if (index >= 0)
+    for (linha=0; linha < rede.indice; linha++)
     {
-        for (linha=0; linha < rede.indice; linha++)
-        {
-            if (rede.matrix[linha][index] == 1)
-                imprimir(rede.vetor[index]);
-        }
+        if (rede.matrix[i][linha] == 1 || rede.matrix[i][linha] == 1)
+            imprimir(rede.vetor[linha]);
     }
+
 }

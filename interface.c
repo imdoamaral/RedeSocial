@@ -178,7 +178,6 @@ void subMenuModulo2(TRedeSocial *rede, TUsuarios user1, TUsuarios user2)
             fgets(user2.nome, 100, stdin);
 
             cadastrarAmizades(user1, user2, rede);
-            printf("\n\n >>>>> MSG: Amizade cadastrada com sucesso! <<<<< \n\n");
 
             system("PAUSE");
             break;
@@ -201,7 +200,7 @@ void subMenuModulo2(TRedeSocial *rede, TUsuarios user1, TUsuarios user2)
                 printf("\n\n >>>>> MSG: Amizade encontrada! <<<<<\n\n");
             }
             else
-                printf("\n\n >>>>> MSG: Os usuarios pesquisados nao estao cadastrados! <<<<<\n\n");
+                printf("\n\n >>>>> MSG: Amizade NAO encontrada! <<<<<\n\n");
 
             system("PAUSE");
             break;
@@ -227,12 +226,6 @@ void subMenuModulo2(TRedeSocial *rede, TUsuarios user1, TUsuarios user2)
             fgets(user2.nome, 100, stdin);
 
             index = excluirAmizades(user1, user2, rede);
-            if (index >= 0)
-            {
-                printf("\n\n >>>>> MSG: Amizade excluida com sucesso! <<<<<\n\n");
-            }
-            else
-                printf("\n\n >>>>> MSG: Amizade nao encontrada! <<<<<\n\n");
 
             system("PAUSE");
             break;
@@ -243,7 +236,7 @@ void subMenuModulo2(TRedeSocial *rede, TUsuarios user1, TUsuarios user2)
 
             if (rede->indice > 0)
             {
-                printf("\n\n MSG: Digite o nome da usuario que deseja IMPRIMIR as amizades: ");
+                printf("\n\n MSG: Digite o nome do usuario que deseja IMPRIMIR as amizades: ");
                 fflush(stdin);
                 fgets(user1.nome, 100, stdin);
 

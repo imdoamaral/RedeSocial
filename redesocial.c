@@ -41,7 +41,7 @@ void ler(TUsuarios *user)
 
 void imprimir(TUsuarios user)
 {
-    printf("\n\n##### CHAMADA DA FUNCAO IMPRIMIR #####\n");
+    printf("\n##### CHAMADA DA FUNCAO IMPRIMIR #####\n");
 
     printf("\nNome do usuario: ");
     printf("\n%s", user.nome);

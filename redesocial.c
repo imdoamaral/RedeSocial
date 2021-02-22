@@ -68,12 +68,16 @@ void imprimir(TUsuarios user)
     printf("\n\nID: ");
     printf("%d", user.ID);
 
+    user.total_amigos = 0;
+
     printf("\n");
 }
 
 void inicializar(TRedeSocial *rede)
 {
     rede->indice = 0;
+
+    rede->indice2 = 0;
 
     int linha, coluna;
 
@@ -127,7 +131,7 @@ void alterar(TRedeSocial *rede, TUsuarios user, int index)
 void excluir (TRedeSocial *rede, int index)
 {
         rede->vetor[index].ID = -1;
-        int linha, coluna;
+        int coluna;
 
         /* Zerando todas as amizades do ponto de vista do usuario 'index'
         for (coluna=0; coluna < rede->indice ; coluna++)
@@ -148,4 +152,21 @@ void excluir (TRedeSocial *rede, int index)
                 rede->matrix[index][coluna] = 0; // do ponto de vista: i
                 rede->matrix[coluna][index] = 0; // do ponto de vista: col
         }
+}
+
+// 7. c)
+void calcularAmigosEmComum(TUsuarios user1, TUsuarios user2, TRedeSocial rede)
+{
+    int i, j, linha, coluna;
+
+    i = pesquisar(rede, user1);
+    j = pesquisar(rede, user2);
+
+    int index = retornarAmigosEmComum(i, j, rede);
+
+    for(linha=0; linha < rede.indice; linha++)
+    {
+        for(coluna=0; coluna < rede.indice; coluna++)
+            rede.matrizAmigos[linha][coluna] = index;
+    }
 }

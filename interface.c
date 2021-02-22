@@ -65,9 +65,7 @@ void subMenuModulo1(TRedeSocial *rede, TUsuarios user)
                 printf("\n\n >>>>> MSG: Usuario pesquisado NAO esta cadastrado! <<<<<");
 
             printf("\n\n\t >>>>> MSG: Pressione uma tecla para continuar... <<<<<");
-            fflush(stdin);
-            getchar();
-            //system("PAUSE");
+            system("PAUSE");
             break;
 
         case 3:
@@ -127,25 +125,19 @@ void subMenuModulo1(TRedeSocial *rede, TUsuarios user)
                 printf("\n\n >>>>> MSG: Nao existem usuarios cadastrados! <<<<<\n\n");
 
             printf("\n\n >>>>> MSG: Pressione uma tecla para continuar <<<<<\n\n");
-            fflush(stdin);
-            getchar();
-            //system("PAUSE");
+            system("PAUSE");
             break;
 
         case 6:
             system("cls");
             printf("\n\n\n\t>>>>> MSG: Saindo do MODULO... <<<<<");
-            fflush(stdin);
-            getchar();
-            //system("PAUSE");
+            system("PAUSE");
             break;
 
         default:
             system("cls");
             printf("\n\n\n\t>>>>> MSG: Digite uma opcao valida! <<<<<");
-            fflush(stdin);
-            getchar();
-            //system("PAUSE");
+            system("PAUSE");
         }
 
     }while(opcao != 6);
@@ -177,7 +169,7 @@ void subMenuModulo2(TRedeSocial *rede, TUsuarios user1, TUsuarios user2)
             fflush(stdin);
             fgets(user2.nome, 100, stdin);
 
-            cadastrarAmizades(user1, user2, rede);
+            cadastrarAmizades(&user1, &user2, rede);
 
             system("PAUSE");
             break;
@@ -257,17 +249,13 @@ void subMenuModulo2(TRedeSocial *rede, TUsuarios user1, TUsuarios user2)
         case 6:
             system("cls");
             printf("\n\n\n\t>>>>> MSG: Saindo do MODULO... <<<<<");
-            fflush(stdin);
-            getchar();
-            //system("PAUSE");
+            system("PAUSE");
             break;
 
         default:
             system("cls");
             printf("\n\n\n\t>>>>> MSG: Digite uma opcao valida! <<<<<");
-            fflush(stdin);
-            getchar();
-            //system("PAUSE");
+            system("PAUSE");
         }
 
     }while(opcao != 6);

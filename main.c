@@ -45,25 +45,25 @@ int main()
             // Chamada de Funcao para o submenu do Modulo I
             subMenuModulo1(&rede, user1);
             break;
+
         case 2:
             // Chamada de Funcao para o submenu do Modulo II
             subMenuModulo2(&rede, user1, user2);
+            break;
+
         case 3:
             system("cls");
             printf("\n\n\n\t>>>>> MSG: Saindo do programa... <<<<<");
             break;
+
         case 4:
             system("cls");
             printf("\n\n\n\t>>>>> MSG: Digite uma opcao valida! <<<<<");
-            fflush(stdin);
-            getchar();
-            //system("PAUSE");
+            system("PAUSE");
         }
     }while(opcao != 3);
 
-    fflush(stdin);
-    getchar();
-    //system("PAUSE");
+    system("PAUSE");
 
     return 0;
 }

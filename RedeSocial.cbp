@@ -35,6 +35,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="amizades.h" />
+		<Unit filename="exercicios.h" />
 		<Unit filename="interface.c">
 			<Option compilerVar="CC" />
 		</Unit>
